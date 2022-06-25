@@ -3,8 +3,9 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 // mport thunk from 'redux-thunk';
 import rootReducer from '../reducers';
 
-const store = createStore((
+const store = createStore(
   rootReducer,
-  composeWithDevTools()));
+  composeWithDevTools(),
+);
 
 export default store;

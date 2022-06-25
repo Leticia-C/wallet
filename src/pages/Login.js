@@ -27,7 +27,8 @@ class Login extends React.Component {
     }
   }
 
-   handleClick =() => {
+   handleClick =(event) => {
+     event.preventDefault();
      const { history, user } = this.props;
      const { email } = this.state;
      user(email);
