@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Header from './Header';
+import Header from '../component/Header';
+import Tabela from '../component/Tabela';
 
 class Wallet extends React.Component {
   render() {
@@ -70,7 +71,11 @@ class Wallet extends React.Component {
               <option>Saúde</option>
             </select>
           </label>
+          <button type="button">
+            Adicionar despesa
+          </button>
         </fieldset>
+        <Tabela />
       </div>
     );
   }
