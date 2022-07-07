@@ -1,6 +1,7 @@
 // Esse reducer será responsável por tratar o todas as informações relacionadas as despesas
 
-import { SAVE_CURRENCIES } from '../actions';
+import { ERROR_REQUEST,
+  SAVE_CURRENCIES, SAVE_EXPENSES } from '../actions';
 
 const INITIAL_STATE = {
   currencies: [], // array de string
@@ -9,13 +10,20 @@ const INITIAL_STATE = {
   idToEdit: 0, // valor numérico que armazena o id da despesa que esta sendo editada
 };
 
-const wallet = (state = INITIAL_STATE, action) => {
+const walletReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
   case SAVE_CURRENCIES:
     return { ...state, currencies: action.wallet };
+  case SAVE_EXPENSES:
+    return {
+      ...state,
+      expenses: [...state.expenses, action.wallet],
+    };
+  case ERROR_REQUEST:
+    return { ...state, error: action.error };
   default:
     return state;
   }
 };
 
-export default wallet;
+export default walletReducer;

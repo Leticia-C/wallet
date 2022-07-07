@@ -1,4 +1,4 @@
-import React from 'react';
+/* import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { getCurrencies } from '../actions';
@@ -29,6 +29,7 @@ const mapStateToProps = (state) => ({
 });
 const mapDispatchToProps = (dispatch) => ({
   currenciesApi: (wallet) => dispatch(getCurrencies(wallet)),
+  ExpensesApi:
 });
 
 Header.propTypes = {
@@ -36,3 +37,4 @@ Header.propTypes = {
   currenciesApi: PropTypes.func.isRequired };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);
+ */
