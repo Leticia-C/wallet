@@ -23,7 +23,6 @@ const walletReducer = (state = INITIAL_STATE, action) => {
     return {
       ...state,
       expenses: action.delite,
-      itor: false,
     };
   default:
     return state;

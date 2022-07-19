@@ -172,51 +172,54 @@ class Wallet extends React.Component {
                  <th id="realth"> Moeda de conversão</th>
                  <th id="buttonsth"> Editar/Excluir</th>
                </tr>
-               { expenses?.map((product, index) => (
-                 <tbody key={ index }>
-                   <tr>
-                     <td headers="descriptionth">{product.description}</td>
-                     <td headers="tagth">{product.tag }</td>
-                     <td headers="methodth">{product.method }</td>
-                     <td
-                       headers="valueth"
-                     >
-                       {
-                         Number(product.value).toFixed(2)
-                       }
+             </thead>
+             <tbody>
+               { expenses.map((product) => (
 
-                     </td>
-                     <td headers="currencyth">
-                       {product.exchangeRates[product.currency]
-                         .name}
+                 <tr key={ product.id }>
 
-                     </td>
-                     <td headers="cambioth">
-                       {Number(product.exchangeRates[product.currency].ask)
-                         .toFixed(2)}
-                     </td>
-                     <td headers="exchangesth">
-                       {Number(product.value)
+                   <td headers="descriptionth">{product.description}</td>
+                   <td headers="tagth">{product.tag }</td>
+                   <td headers="methodth">{product.method }</td>
+                   <td
+                     headers="valueth"
+                   >
+                     {
+                       Number(product.value).toFixed(2)
+                     }
+
+                   </td>
+                   <td headers="currencyth">
+                     {product.exchangeRates[product.currency]
+                       .name}
+
+                   </td>
+                   <td headers="cambioth">
+                     {Number(product.exchangeRates[product.currency].ask)
+                       .toFixed(2)}
+                   </td>
+                   <td headers="exchangesth">
+                     {Number(product.value)
                       * (product.exchangeRates[product.currency].ask)}
 
-                     </td>
-                     <td headers="realth"> Real</td>
+                   </td>
+                   <td headers="realth"> Real</td>
 
-                     <td>
-                       <button headers="buttonsth" type="button">Editar</button>
-                       <button
-                         data-testid="delete-btn"
-                         type="button"
-                         headers="buttonsth"
-                         onClick={ () => { this.deleteButton(product.id); } }
-                       >
-                         Excluir
-                       </button>
-                     </td>
-                   </tr>
-                 </tbody>
+                   <td>
+                     <button headers="buttonsth" type="button">Editar</button>
+                     <button
+                       data-testid="delete-btn"
+                       type="button"
+                       headers="buttonsth"
+                       onClick={ () => { this.deleteButton(product.id); } }
+                     >
+                       Excluir
+                     </button>
+                   </td>
+                 </tr>
                ))}
-             </thead>
+             </tbody>
+
            </table>
          </div>
        );
