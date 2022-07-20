@@ -55,7 +55,7 @@ class Wallet extends React.Component {
 
      deleteButton = (id) => {
        const { expenses, dispatch } = this.props;
-       const compareExpenses = expenses.filter((e) => e.id !== id);
+       const compareExpenses = expenses.filter((values) => values.id !== id);
        dispatch(deliteExpenses(compareExpenses));
      }
 
