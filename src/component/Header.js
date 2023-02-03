@@ -2,7 +2,6 @@
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { getCurrencies } from '../actions';
-
 class Header extends React.Component {
   async componentDidMount() {
     const getApi = await fetch('https://economia.awesomeapi.com.br/json/all');
@@ -11,7 +10,6 @@ class Header extends React.Component {
     const { currenciesApi } = this.props;
     currenciesApi(currencies);
   }
-
   render() {
     const { email } = this.props;
     return (
@@ -31,10 +29,4 @@ const mapDispatchToProps = (dispatch) => ({
   currenciesApi: (wallet) => dispatch(getCurrencies(wallet)),
   ExpensesApi:
 });
-
-Header.propTypes = {
-  email: PropTypes.string.isRequired,
-  currenciesApi: PropTypes.func.isRequired };
-
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
- */
+*/
